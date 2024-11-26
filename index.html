@@ -33,7 +33,7 @@
             }
             
             h4 {
-                padding-top: 60px;
+                padding-top: 40px;
                 margin-top: -60px;
                 scroll-margin-top: 70px;
             }
@@ -71,27 +71,34 @@
                 offset: 100
             });
 
-            // 平滑滚动
-            $('.navbar a[href^="#"]').on('click', function(e) {
-                e.preventDefault();
-                var target = $(this.hash);
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top - 90
-                    }, 500);
-                }
-            });
+        $('.navbar a[href^="#"]').on('click', function(e) {
+            e.preventDefault();
+            var target = $(this.hash);
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 90
+                }, 500);
+            }
         });
+    
+        $('#back-to-top').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);});
+        });
+
+        
     </script>
 
     </head>
-    <body data-spy="scroll" data-target="#navbar" data-offset="80">
+    <body data-spy="scroll" data-target="#navbar" data-offset="100">
         <div class="container">
-            <div class="span10 offset1">
+            <div class="span8 offset2">
                 <div class="navbar navbar-fixed-top navbar-inverse" id="navbar">
                     <div class="navbar-inner">
                         <div class="container">
-                            <a class="brand" href="#top">Feng Jiang</a>
+                            <a class="brand" href="#" id="back-to-top">Feng Jiang</a>
                             <ul class="nav">
                                 <li class="nav-item"><a href="#profile">Profile</a></li>
                                 <li class="nav-item"><a href="#biography">Biography</a></li>
