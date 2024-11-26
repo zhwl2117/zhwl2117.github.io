@@ -14,18 +14,36 @@
         <script src="js/bootstrap.js"></script>
         <style>
             body {
-                padding-top: 70px;
+                padding-top: 100px; /* Increased padding to prevent navbar overlap */
             }
             .container {
                 max-width: 1200px;
                 margin: 0 auto;
+                padding: 0 100px; /* Add significant padding to container */
             }
             .teaching-list li {
                 margin-bottom: 5px;
                 line-height: 1.4;
             }
             #body {
-                margin: 0 50px;
+                margin: 0 100px; /* Increased horizontal margins */
+            }
+            
+            /* Adjust section headings to account for fixed navbar */
+            h4 {
+                padding-top: 70px;  /* Add padding to section headings */
+                margin-top: -60px;  /* Negative margin to offset padding */
+                scroll-margin-top: 70px; /* Modern browsers support for scroll positioning */
+            }
+            
+            /* Additional content padding */
+            .contentItem {
+                padding: 0 20px; /* Add padding to content sections */
+            }
+            
+            /* Navbar adjustments */
+            .navbar-fixed-top {
+                margin-bottom: 20px;
             }
         </style>
     </head>
@@ -73,7 +91,7 @@
                                             <tr>
                                                 <a href="https://scholar.google.com/citations?user=6OdM9AUAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a> &nbsp;&nbsp;
                                                 <a href="https://github.com/fengjiang02" target="_blank">GitHub</a> &nbsp;&nbsp;
-                                                <a href="upload/resume.pdf" target="_blank">Download CV</a>                                            </tr>
+                                                <a href="upload/Feng_Jiang_Resume.pdf" target="_blank">Download CV</a>                                            </tr>
                                             </tr>
                                         </tbody>
                                     </table>
