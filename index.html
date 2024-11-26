@@ -29,9 +29,8 @@
                 margin: 0 100px; /* Increased horizontal margins */
             }
             
-            /* Adjust section headings to account for fixed navbar */
             h4 {
-                padding-top: 70px;  /* Add padding to section headings */
+                padding-top: 40px;  /* Add padding to section headings */
                 margin-top: -60px;  /* Negative margin to offset padding */
                 scroll-margin-top: 70px; /* Modern browsers support for scroll positioning */
             }
@@ -72,7 +71,7 @@
                         // Initialize Bootstrap scrollspy
                         $('body').scrollspy({ 
                             target: '#navbar',
-                            offset: 80 // Adjust this value based on your navbar height
+                            offset: 80
                         });
         
                         // Smooth scrolling for anchor links
@@ -81,12 +80,11 @@
                             var target = $(this.getAttribute('href'));
                             if(target.length) {
                                 $('html, body').stop().animate({
-                                    scrollTop: target.offset().top - 70 // Adjust for navbar height
+                                    scrollTop: target.offset().top - 70
                                 }, 500);
                             }
                         });
         
-                        // Update active state on scroll
                         $(window).on('activate.bs.scrollspy', function() {
                             var currentItem = $('.navbar .nav > .active > a').text();
                             console.log('Current section: ' + currentItem);
@@ -94,27 +92,28 @@
                     });
                 </script>
     </head>
-    <body data-spy="scroll" data-target="#navbar">
+    <body data-spy="scroll" data-target="#navbar" data-offset="80">
         <div class="container">
             <div class="span10 offset1">
                 <div class="navbar navbar-fixed-top navbar-inverse" id="navbar">
                     <div class="navbar-inner">
                         <div class="container">
-                            <a class="brand" href="#">Feng Jiang</a>
+                            <a class="brand" href="#top">Feng Jiang</a>
                             <ul class="nav">
-                                <li class="active"><a href="#profile">Profile</a></li>
-                                <li><a href="#biography">Biography</a></li>
-                                <li><a href="#research">Research</a></li>
-                                <li><a href="#publications">Publications</a></li>
-                                <li><a href="#teaching">Teaching</a></li>
-                                <li><a href="#honors">Honors</a></li>
-                                <li><a href="#research_experience">Research Experience</a></li>
+                                <li class="nav-item"><a href="#profile">Profile</a></li>
+                                <li class="nav-item"><a href="#biography">Biography</a></li>
+                                <li class="nav-item"><a href="#research">Research</a></li>
+                                <li class="nav-item"><a href="#publications">Publications</a></li>
+                                <li class="nav-item"><a href="#teaching">Teaching</a></li>
+                                <li class="nav-item"><a href="#honors">Honors</a></li>
+                                <li class="nav-item"><a href="#research_experience">Experience</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div id="body">
-                    <table cellpadding="3" cellspacing="0" border="0" id="profile">
+                    <section id="profile">
+                    <table cellpadding="3" cellspacing="0" border="0">
                         <tbody>
                             <tr>
                                 <td valign="top">
@@ -146,16 +145,19 @@
                             </tr>
                         </tbody>
                     </table>
-                    
+                    </section>
                     <br />
                     
-                    <h4 id="biography">Biography</h4>
+                    <section id="biography">
+                        <h4>Biography</h4>
                     <p class="contentItem">
                     I am a third-year PhD student in Computer Science at the University of Texas at Arlington (John S. Schuchman Outstanding Doctoral Student). My PhD advisor is <a href="https://ranger.uta.edu/~huang/" target="_blank">Prof. Junzhou Huang</a>. I received my M.S. in Software Engineering from UTA and B.E. in Software Engineering from Xi'an Jiaotong University City College.
                     </p>
                     <br />
+                    </section>
 
-                    <h4 id="research">Research</h4>
+
+                    <h4>Research</h4>
                     <p class="contentItem">
                     My research interests include:
                     <br/><br/>
@@ -165,8 +167,11 @@
                     - Long-tailed Learning
                     </p>
                     <br />
+                    </section>
 
-                    <h4 id="publications">Publications</h4>
+
+                    <section id="publications">
+                    <h4>Publications</h4>
                     <ol type="1">
                         <li><b>Feng Jiang</b>, et al. <a href="https://academic.oup.com/bib/article/25/4/bbae343/7713742" target="_blank">"GTE: a graph learning framework for prediction of T-cell receptors and epitopes binding specificity."</a> Briefings in Bioinformatics 25.4 (2024).</li><br />
                         
@@ -179,7 +184,9 @@
                         <li>Ma, H., <b>Feng Jiang</b>, Rong, Y., Guo, Y., & Huang, J. <a href="https://dl.acm.org/doi/abs/10.1145/3535508.3545998" target="_blank">"Robust self-training strategy for various molecular biology prediction tasks."</a> In Proceedings of BCB'22.</li>
                     </ol>
                     <br />
+                    </section>
 
+                    <section id="teaching">
                     <h4 id="teaching">Teaching Experience</h4>
                     <ul class="teaching-list">
                         <li>2248-CSE-6324-980-ADV TOPS SOFTWARE ENGINEERING <i>Fall 2024</i></li>
@@ -191,15 +198,19 @@
                         <li>2228-CSE-5325-003-SFWR ENG II: MGMT, MAIN, & QA <i>Fall 2022</i></li>
                     </ul>
                     <br />
+                    </section>
 
+                    <section id="honors">
                     <h4 id="honors">Honors</h4>
                     <ul class="contentItem">
                         <li>John S. Schuchman Outstanding Doctoral Student Award, UTA (April 2023)</li>
                     </ul>
                     <br />
+                    </section>
 
+
+                    <section id="research_experience">
                     <h4 id="research_experience">Research Experience</h4>
-                    
                     <p class="contentItem">
                     <b>(2024.2-Now) Multimodal Large Language Model</b>
                     <ul>
@@ -240,7 +251,7 @@
                     </ul>
                     </p>
                     <br />
-
+                    </section>
 
                     <div class="contentItem">
                         *Last updated on Nov 2024.
@@ -248,5 +259,10 @@
                 </div>
             </div>
         </div>
+    
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap-scrollspy.js"></script>
+        <script src="js/bootstrap.js"></script>
+
     </body>
 </html>
