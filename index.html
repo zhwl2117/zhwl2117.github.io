@@ -42,15 +42,24 @@
                 padding: 0 20px;
             }
             
-            .navbar-fixed-top {
-                margin-bottom: 20px;
+            .navbar .nav > li > a {
+            color: #999;
+            transition: color 0.3s ease;
             }
-            .navbar-inverse .navbar-nav > .active > a,
-            .navbar-inverse .navbar-nav > .active > a:hover,
-            .navbar-inverse .navbar-nav > .active > a:focus {
-                color: #ffffff;
-                background-color: #080808;
-        }
+            
+            .navbar .nav > li > a:hover {
+                color: #fff;
+                background: transparent; /* 移除hover背景色 */
+            }
+            
+            /* 激活状态只改变文字颜色 */
+            .navbar .nav > .active > a,
+            .navbar .nav > .active > a:hover,
+            .navbar .nav > .active > a:focus {
+                color: #fff !important;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
