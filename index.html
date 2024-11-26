@@ -46,6 +46,53 @@
                 margin-bottom: 20px;
             }
         </style>
+                <style>
+                    /* Previous styles remain the same */
+                    
+                    /* Navigation active state styles */
+                    .navbar .nav > li > a {
+                        color: #999;
+                        transition: color 0.3s ease;
+                    }
+                    
+                    .navbar .nav > li > a:hover {
+                        color: #fff;
+                    }
+                    
+                    .navbar .nav > .active > a,
+                    .navbar .nav > .active > a:hover,
+                    .navbar .nav > .active > a:focus {
+                        color: #fff;
+                        background-color: #333;
+                    }
+                </style>
+        
+                <script>
+                    $(document).ready(function() {
+                        // Initialize Bootstrap scrollspy
+                        $('body').scrollspy({ 
+                            target: '#navbar',
+                            offset: 80 // Adjust this value based on your navbar height
+                        });
+        
+                        // Smooth scrolling for anchor links
+                        $('a[href^="#"]').on('click', function(event) {
+                            event.preventDefault();
+                            var target = $(this.getAttribute('href'));
+                            if(target.length) {
+                                $('html, body').stop().animate({
+                                    scrollTop: target.offset().top - 70 // Adjust for navbar height
+                                }, 500);
+                            }
+                        });
+        
+                        // Update active state on scroll
+                        $(window).on('activate.bs.scrollspy', function() {
+                            var currentItem = $('.navbar .nav > .active > a').text();
+                            console.log('Current section: ' + currentItem);
+                        });
+                    });
+                </script>
     </head>
     <body data-spy="scroll" data-target="#navbar">
         <div class="container">
