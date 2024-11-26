@@ -19,33 +19,46 @@
                 padding-top: 100px;
                 position: relative;
             }
+            
+            /* 修改容器样式 */
             .container {
                 max-width: 1200px;
+                width: 100%;
                 margin: 0 auto;
-                padding: 0 100px;
+                padding: 0;
             }
+            
+            /* 修改内容区域样式 */
+            #body {
+                max-width: 1000px;  /* 根据需要调整宽度 */
+                margin: 0 auto;     /* 这将使内容居中 */
+                padding: 0 20px;    /* 添加一些内边距 */
+            }
+        
+            /* 其他样式保持不变 */
             .teaching-list li {
                 margin-bottom: 5px;
                 line-height: 1.4;
             }
-            #body {
-                margin: 0 100px;
-            }
             
             h4 {
-                padding-top: 40px;
+                padding-top: 20px;
                 margin-top: -60px;
                 scroll-margin-top: 70px;
             }
-    
+            
             .contentItem {
                 padding: 0 20px;
             }
             
+            .navbar-fixed-top {
+                margin-bottom: 20px;
+            }
+        
             .navbar .nav > li > a {
-            padding: 15px 15px 10px;
-            color: #999;
-            transition: color 0.3s ease;
+                padding: 15px 15px 10px;
+                color: #999;
+                transition: color 0.3s ease;
             }
             
             .navbar .nav > li > a:hover {
@@ -53,7 +66,6 @@
                 background: transparent;
             }
             
-            /* 激活状态只改变文字颜色 */
             .navbar .nav > .active > a,
             .navbar .nav > .active > a:hover,
             .navbar .nav > .active > a:focus {
@@ -61,7 +73,7 @@
                 background: transparent !important;
                 box-shadow: none !important;
             }
-    </style>
+        </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
@@ -92,9 +104,7 @@
     </script>
 
     </head>
-    <body data-spy="scroll" data-target="#navbar" data-offset="100">
-        <div class="container">
-            <div class="span8 offset2">
+    <body data-spy="scroll" data-target="#navbar" data-offset="80">
                 <div class="navbar navbar-fixed-top navbar-inverse" id="navbar">
                     <div class="navbar-inner">
                         <div class="container">
@@ -111,6 +121,8 @@
                         </div>
                     </div>
                 </div>
+
+            <div class="container">
                 <div id="body">
                     <section id="profile">
                     <table cellpadding="3" cellspacing="0" border="0">
