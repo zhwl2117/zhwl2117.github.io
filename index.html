@@ -79,76 +79,7 @@
             }
         
         </style>
-    <style>
-        .navbar-fixed-top {
-            margin-bottom: 20px;
-        }
-    
-        .navbar .nav {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-    
-        .navbar .brand {
-            padding: 15px 20px;
-            font-size: 18px;
-        }
-    
-        .navbar .nav > li > a {
-            padding: 15px 12px 10px;
-            color: #999;
-            transition: color 0.3s ease;
-        }
-    
-        /* 移动端样式 */
-        @media (max-width: 767px) {
-            body {
-                margin-top: 60px; /* 减小顶部边距 */
-            }
-            
-            .navbar-fixed-top {
-                position: fixed;
-            }
-            
-            .navbar .nav {
-                flex-wrap: wrap;
-                justify-content: flex-start;
-            }
-            
-            .navbar .nav > li > a {
-                padding: 8px 10px;
-                font-size: 14px; /* 减小字体大小 */
-            }
-            
-            .navbar .brand {
-                padding: 8px 15px;
-                font-size: 16px;
-            }
-            
-            /* 添加汉堡菜单按钮样式 */
-            .navbar .btn-navbar {
-                display: block;
-                float: right;
-                padding: 7px 10px;
-                margin-top: 8px;
-                margin-right: 5px;
-                background-color: #333;
-                border: 1px solid #222;
-            }
-            
-            .nav-collapse {
-                clear: both;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.35s ease;
-            }
-            
-            .nav-collapse.in {
-                max-height: 500px;
-            }
-        }
-    </style>
+        
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
@@ -177,47 +108,22 @@
 
         
     </script>
-    <script>
-        $(document).ready(function() {
-            // 点击导航链接时自动收起菜单
-            $('.navbar-collapse a').click(function(){
-                $('.navbar-collapse').collapse('hide');
-            });
-            
-            // 调整滚动偏移量
-            var offset = 60;
-            if($(window).width() <= 767) {
-                offset = 50;
-            }
-            
-            $('body').scrollspy({
-                target: '#navbar',
-                offset: offset
-            });
-        });
-        </script>
+
     </head>
     <body data-spy="scroll" data-target="#navbar" data-offset="80">
         <div class="navbar navbar-fixed-top navbar-inverse" id="navbar">
             <div class="navbar-inner">
                 <div class="container">
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                     <a class="brand" href="#" id="back-to-top">Feng Jiang</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="nav-item"><a href="#profile">Profile</a></li>
-                            <li class="nav-item"><a href="#biography">Biography</a></li>
-                            <li class="nav-item"><a href="#research">Research</a></li>
-                            <li class="nav-item"><a href="#publications">Publications</a></li>
-                            <li class="nav-item"><a href="#teaching">Teaching</a></li>
-                            <li class="nav-item"><a href="#honors">Honors</a></li>
-                            <li class="nav-item"><a href="#research_experience">Experience</a></li>
-                        </ul>
-                    </div>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="#profile">Profile</a></li>
+                        <li class="nav-item"><a href="#biography">Biography</a></li>
+                        <li class="nav-item"><a href="#research">Research</a></li>
+                        <li class="nav-item"><a href="#publications">Publications</a></li>
+                        <li class="nav-item"><a href="#teaching">Teaching</a></li>
+                        <li class="nav-item"><a href="#honors">Honors</a></li>
+                        <li class="nav-item"><a href="#research_experience">Experience</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -225,42 +131,58 @@
         <div class="container">
         <div id="body">
             <section id="profile">
-            <table cellpadding="3" cellspacing="0" border="0">
-                <tbody>
-                    <tr>
-                        <td valign="top">
-                            <p>
-                                <h2><b>Feng Jiang</b></h2>
-                            </p>
-                            <p>
-                            PhD Student in Computer Science
-                            </p>
-                            <table width="100%" cellpadding="5" cellspacing="0" style="text-align: left;">
-                                <tbody>
-                                    <tr>
-                                            University of Texas at Arlington <br/>
-                                    </tr>
-                                    <tr>
-                                            Arlington, TX <br/><br/>
-                                    </tr>
-                                    <tr>
-                                        <b>Email:</b> alanfengjiang@gmail.com <br />
-                                    </tr>
-                                    <tr>
-                                        <a href="https://scholar.google.com/citations?user=6OdM9AUAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a> &nbsp;&nbsp;
-                                        <a href="https://github.com/fengjiang02" target="_blank">GitHub</a> &nbsp;&nbsp;
-                                        <a href="upload/Feng_Jiang_Resume.pdf" target="_blank">Download CV</a>                                            </tr>
-                                    </tr>
-                                    <td valign="top" style="width: 30%; text-align: right;">
-                                        <!-- 右侧照片 -->
-                                        <img src="upload/images/Feng_Jiang.jpg" alt="Feng Jiang" style="width: 250px; border-radius: 5px; margin-top: -200px; margin-left: 500px;"/>
-                                    </td>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                <style>
+                    .profile-container {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 20px;
+                        align-items: flex-start;
+                        max-width: 900px;
+                        margin: 0 auto;
+                        padding: 20px;
+                    }
+                    
+                    .profile-info {
+                        flex: 1;
+                        min-width: 300px;
+                    }
+                    
+                    .profile-image {
+                        width: 250px;
+                        border-radius: 5px;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .profile-container {
+                            flex-direction: column-reverse;
+                            align-items: center;
+                            text-align: center;
+                        }
+                        
+                        .profile-image {
+                            margin: 0 auto;
+                            width: 200px;
+                        }
+                    }
+                </style>
+            
+                <div class="profile-container">
+                    <div class="profile-info">
+                        <h2><b>Feng Jiang</b></h2>
+                        <p>PhD Student in Computer Science</p>
+                        <p>University of Texas at Arlington<br/>
+                        Arlington, TX</p>
+                        <p><b>Email:</b> alanfengjiang@gmail.com</p>
+                        <p>
+                            <a href="https://scholar.google.com/citations?user=6OdM9AUAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a> &nbsp;&nbsp;
+                            <a href="https://github.com/fengjiang02" target="_blank">GitHub</a> &nbsp;&nbsp;
+                            <a href="upload/Feng_Jiang_Resume.pdf" target="_blank">Download CV</a>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="upload/images/Feng_Jiang.jpg" alt="Feng Jiang" class="profile-image"/>
+                    </div>
+                </div>
             </section>
             <br />
             
