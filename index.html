@@ -78,82 +78,8 @@
                 box-shadow: none !important;
             }
         
-            .navbar-toggle {
-                display: none;
-                float: right;
-                padding: 9px 10px;
-                margin-top: 8px;
-                margin-right: 15px;
-                background-color: transparent;
-                border: 1px solid #ddd;
-            }
-
-            .navbar-toggle .icon-bar {
-                display: block;
-                width: 22px;
-                height: 2px;
-                background-color: #fff;
-                margin: 4px 0;
-            }
-
-            /* 小屏幕样式 */
-            @media (max-width: 768px) {
-                .navbar-toggle {
-                    display: block;
-                }
-                
-                .navbar-collapse {
-                    border-top: 1px solid #444;
-                    padding-left: 15px;
-                    padding-right: 15px;
-                }
-                
-                .navbar .nav {
-                    float: none;
-                    margin: 0;
-                    display: block;
-                }
-                
-                .navbar .nav > li {
-                    float: none;
-                    display: block;
-                }
-                
-                .navbar .nav > li > a {
-                    padding: 10px 15px;
-                    display: block;
-                }
-                
-                .navbar-collapse.collapse {
-                    display: none !important;
-                }
-                
-                .navbar-collapse.collapse.in {
-                    display: block !important;
-                }
-                
-                .container {
-                    padding-left: 15px;
-                    padding-right: 15px;
-                }
-            }
-
-            /* 大屏幕样式 */
-            @media (min-width: 769px) {
-                .navbar-collapse.collapse {
-                    display: block !important;
-                    height: auto !important;
-                    padding-bottom: 0;
-                    overflow: visible !important;
-                }
-                
-                .navbar .nav {
-                    float: right;
-                    display: flex;
-                }
-            }
         </style>
-
+        
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
@@ -188,25 +114,16 @@
         <div class="navbar navbar-fixed-top navbar-inverse" id="navbar">
             <div class="navbar-inner">
                 <div class="container">
-                    <!-- 添加折叠按钮 -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                     <a class="brand" href="#" id="back-to-top">Feng Jiang</a>
-                    <!-- 添加 collapse 类 -->
-                    <div class="collapse navbar-collapse" id="nav-collapse">
-                        <ul class="nav">
-                            <li class="nav-item"><a href="#profile">Profile</a></li>
-                            <li class="nav-item"><a href="#biography">Biography</a></li>
-                            <li class="nav-item"><a href="#research">Research</a></li>
-                            <li class="nav-item"><a href="#publications">Publications</a></li>
-                            <li class="nav-item"><a href="#teaching">Teaching</a></li>
-                            <li class="nav-item"><a href="#honors">Honors</a></li>
-                            <li class="nav-item"><a href="#research_experience">Experience</a></li>
-                        </ul>
-                    </div>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="#profile">Profile</a></li>
+                        <li class="nav-item"><a href="#biography">Biography</a></li>
+                        <li class="nav-item"><a href="#research">Research</a></li>
+                        <li class="nav-item"><a href="#publications">Publications</a></li>
+                        <li class="nav-item"><a href="#teaching">Teaching</a></li>
+                        <li class="nav-item"><a href="#honors">Honors</a></li>
+                        <li class="nav-item"><a href="#research_experience">Experience</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
