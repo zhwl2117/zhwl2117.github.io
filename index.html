@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Feng Jiang's Homepage</title>
@@ -5,101 +6,84 @@
         <meta name="author" content="Feng Jiang" />
         <meta name="description" content="Homepage of Feng Jiang, PhD Student at UTA" />
         <meta name="keywords" content="Feng Jiang, PhD Student, University of Texas at Arlington" />
-        
         <!-- Bootstrap -->
         <link href="css/bootstrap.css" rel="stylesheet" />
         <link href="css/bootstrap-responsive.css" rel="stylesheet" />
         <link href="css/main.css" rel="stylesheet" />
-        
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
         <style>
             body {
-                padding-top: 100px;
-                position: relative;
+                padding-top: 100px; /* Increased padding to prevent navbar overlap */
             }
-            
             .container {
                 max-width: 1200px;
                 margin: 0 auto;
-                padding: 0 100px;
+                padding: 0 100px; /* Add significant padding to container */
             }
-            
-            section {
-                margin-bottom: 40px;
-            }
-            
-            h4 {
-                padding-top: 60px;
-                margin-top: -60px;
-                margin-bottom: 20px;
-                scroll-margin-top: 70px;
-            }
-            
-            .contentItem {
-                padding: 0 20px;
-                line-height: 1.6;
-            }
-            
             .teaching-list li {
                 margin-bottom: 5px;
                 line-height: 1.4;
             }
-            
             #body {
-                margin: 0 100px;
+                margin: 0 100px; /* Increased horizontal margins */
             }
             
+            h4 {
+                padding-top: 60px;  /* Add padding to section headings */
+                margin-top: -60px;  /* Negative margin to offset padding */
+                scroll-margin-top: 70px; /* Modern browsers support for scroll positioning */
+            }
+            
+            /* Additional content padding */
+            .contentItem {
+                padding: 0 20px; /* Add padding to content sections */
+            }
+            
+            /* Navbar adjustments */
             .navbar-fixed-top {
                 margin-bottom: 20px;
             }
-            
-            /* Navigation styles */
-            .navbar .nav > li > a {
-                color: #999;
-                transition: all 0.3s ease;
-            }
-            
-            .navbar .nav > li > a:hover {
-                color: #fff;
-                background-color: #444;
-            }
-            
-            .navbar .nav > .active > a,
-            .navbar .nav > .active > a:hover,
-            .navbar .nav > .active > a:focus {
-                color: #fff;
-                background-color: #333;
-            }
-            
-            /* Additional styles for better readability */
-            .publications li {
-                margin-bottom: 15px;
-            }
-            
-            .research-item {
-                margin-bottom: 30px;
-            }
-            
-            ul {
-                padding-left: 20px;
-            }
         </style>
-
-        <!-- Scripts -->
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.js"></script>
+        <style>
+        .navbar .nav > li > a {
+            color: #999;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar .nav > li > a:hover {
+            color: #fff;
+            background-color: #444;
+        }
+        
+        /* 激活状态的样式 */
+        .navbar .nav > .active > a,
+        .navbar .nav > .active > a:hover,
+        .navbar .nav > .active > a:focus {
+            color: #fff !important;
+            background-color: #444 !important;
+            text-decoration: none;
+            box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+        }
+        </style>
         <script>
             $(document).ready(function() {
-                $('body').scrollspy({ 
+                // 初始化 scrollspy
+                var $body = $('body');
+                
+                // 更新 scrollspy 配置
+                $body.scrollspy({
                     target: '#navbar',
-                    offset: 100
+                    offset: 100  // 可能需要根据实际情况调整这个值
                 });
-
-                // Refresh scrollspy
-                $('[data-spy="scroll"]').each(function () {
-                    var $spy = $(this).scrollspy('refresh');
+            
+                // 刷新 scrollspy
+                $(window).on('load', function () {
+                    $body.scrollspy('refresh');
                 });
-
-                // Smooth scrolling
+            
+                // 平滑滚动
                 $('.navbar a').on('click', function(event) {
                     if (this.hash !== "") {
                         event.preventDefault();
@@ -107,11 +91,32 @@
                         
                         $('html, body').animate({
                             scrollTop: $(hash).offset().top - 90
-                        }, 800);
+                        }, 800, function() {
+                            window.location.hash = hash;
+                        });
                     }
                 });
+            
+                // 监听滚动事件以更新导航栏状态
+                $(window).on('scroll activate.bs.scrollspy', function () {
+                    // 确保导航项正确高亮
+                    $('.navbar .nav > li').removeClass('active');
+                    var scrollPos = $(document).scrollTop();
+                    $('.navbar .nav > li > a').each(function () {
+                        var currLink = $(this);
+                        var refElement = $(currLink.attr("href"));
+                        if (refElement.length > 0) {
+                            var elemTop = refElement.position().top - 100;
+                            var elemBottom = elemTop + refElement.height();
+                            if (elemTop <= scrollPos && scrollPos < elemBottom) {
+                                $('.navbar .nav > li').removeClass('active');
+                                currLink.parent().addClass('active');
+                            }
+                        }
+                    });
+                });
             });
-        </script>
+            </script>
     </head>
     <body data-spy="scroll" data-target="#navbar" data-offset="80">
         <div class="container">
